@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
-ENV NGINX_VERSION 1.10.2-1~jessie
+ENV NGINX_VERSION 1.12.1-1~jessie
 
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \
 	&& echo "deb http://nginx.org/packages/debian/ jessie nginx" >> /etc/apt/sources.list \
@@ -28,7 +28,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 RUN rm -Rf /usr/share/nginx/html/*
 
 # Install Confd
-ADD https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 /usr/local/bin/confd
+ADD https://github.com/kelseyhightower/confd/releases/download/v0.13.0/confd-0.13.0-linux-amd64 /usr/local/bin/confd
 RUN chmod +x /usr/local/bin/confd
 
 ADD nginx-start /nginx-start

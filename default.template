@@ -1,7 +1,7 @@
 server {
 
-        server_name localhost;
-        root /var/www/site/docroot; ## <-- Your only path reference.
+        server_name ${SERVER_NAME};
+        root ${WEB_ROOT}; ## <-- Your only path reference.
  
         # Enable compression, this will help if you have for instance advagg module
         # by serving Gzip versions of the files.
